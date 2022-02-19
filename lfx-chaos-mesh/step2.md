@@ -4,15 +4,15 @@ In this session, we will use `minicube` to create local kubernetes cluster.
 
 For more details, please refer to [minicube offcial document](https://minikube.sigs.k8s.io/docs/start/)
 
-`curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64`{{execute}}
+`curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64`{{copy}}
 
-`sudo install minikube-linux-amd64 /usr/local/bin/minikube`{{execute}}
+`sudo install minikube-linux-amd64 /usr/local/bin/minikube`{{cpoy}}
 
-we can use `minikube version`{{execute}} to check that we have already successfully installed `minicude` and its version.
+We can use `minikube version`{{execute}} to check that we have already successfully installed `minicude` and its version.
 
 ## Install kubectl
 
-we nned to install `kubectl` so that we can check and interact with the clusters.
+We need to install `kubectl` so that we can check and interact with the clusters.
 For more details, please refer to [kubernetes documentation](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
 
 1. Download the binary file
@@ -23,3 +23,9 @@ For more details, please refer to [kubernetes documentation](https://kubernetes.
 
 3. Check the install result
    `kubectl version --client`{{execute}}
+
+## Start the cluster
+
+`minicude start`{{execute}}
+`kubectl get services`{{execute}}
+`kubectl get pods`{{execute}}
