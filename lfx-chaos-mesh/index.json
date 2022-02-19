@@ -6,27 +6,27 @@
   "details": {
     "steps": [
       {
-        "title": "Step 1",
+        "title": "Step 1 Create a new Katacoda project",
         "text": "step1.md"
       },
       {
-        "title": "Step 2",
+        "title": "Step 2 Bootstrap a Kubernetes Cluster",
         "text": "step2.md"
       },
       {
-        "title": "Step 3",
+        "title": "Step 3 Install Chaos Mesh",
         "text": "step3.md"
       },
       {
-        "title": "Step 4",
+        "title": "Step 4 Print the version of Kubernetes",
         "text": "step4.md"
       },
       {
-        "title": "Step 5",
-        "text": "step5.md"
+        "title": "Step 5 Print the version of Chaos Mesh",
+        "text": "step5.md "
       },
       {
-        "title": "Step 6",
+        "title": "Step 6 Uninstall Chaos Mesh",
         "text": "step6.md"
       }
     ],
