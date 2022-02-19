@@ -2,6 +2,7 @@ In this session, we will use `minicube` to create local kubernetes cluster.
 
 ## Install minicude
 
+Attention: we have already installed `minicude` for you.
 For more details, please refer to [minicube offcial document](https://minikube.sigs.k8s.io/docs/start/)
 
 `curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64`{{copy}}
@@ -26,6 +27,10 @@ For more details, please refer to [kubernetes documentation](https://kubernetes.
 
 ## Start the cluster
 
-`minicude start`{{execute}}
-`kubectl get services`{{execute}}
-`kubectl get pods`{{execute}}
+To lanuch a cluster, we can run this command `minikube start`{{execute}}
+
+To check the cluster status, we can run `kubectl get services`{{execute}}.
+You will see a similar output as follows:
+
+NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE
+kubernetes ClusterIP 10.96.0.1 <none> 443/TCP 9s
