@@ -23,3 +23,9 @@ For more details, please refer to [kubernetes documentation](https://kubernetes.
 
 3. Check the install result
    `kubectl version --client`{{execute}}
+
+## Start the cluster
+
+`minicude start`{{execute}}
+`kubectl get services`{{execute}}
+`kubectl get pods`{{execute}}
