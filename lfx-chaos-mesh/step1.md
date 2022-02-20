@@ -58,3 +58,5 @@ To check the cluster status, we can run `kubectl get services`{{execute}}. You w
 NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE
 kubernetes ClusterIP xxx.xx.x.x <none> 443/TCP 9s
 ```
+
+We can run `kubectl get nodes`{{execute}} to check node status.
