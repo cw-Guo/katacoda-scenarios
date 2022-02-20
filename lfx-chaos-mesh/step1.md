@@ -12,6 +12,15 @@ For more details, please refer to [minikube offcial document](https://minikube.s
 
 We can use `minikube version`{{execute}} to check that we have already successfully installed `minicude` and its version.
 
+Since we are going to use multiple nodes cluster, we are going to upgrade the `minikube` version to latest.
+
+run 
+`curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64`{{execute}}
+
+`sudo install minikube-linux-amd64 /usr/local/bin/minikube`{{execute}}
+
+and we can check the version again `minikube version`{{execute}}, it would be the latest release.
+
 ## Install kubectl
 
 We need to install `kubectl` so that we can check and interact with the clusters.
@@ -34,6 +43,14 @@ Client Version: version.Info{Major:"1", Minor:"17", GitVersion:"v1.17.3", GitCom
 ## Start the cluster
 
 To lanuch a cluster, we can run this command `minikube start`{{execute}}. The shell would told you that `kubectl` is now configured to use `minikube` if it succeeds. It may need serveral minites to finish.
+
+*Attension*: If you want to create multiple nodes cluster, we need to upgrade docker version.
+
+The upgrade can be done via `sudo apt-get update`{{execute}}
+
+`sudo apt-get install docker-ce docker-ce-cli containerd.io`{{execute}}
+
+After that, we can run `minikube start -n 2`{{execute}}.
 
 To check the cluster status, we can run `kubectl get services`{{execute}}. You will see a similar output as follows:
 
