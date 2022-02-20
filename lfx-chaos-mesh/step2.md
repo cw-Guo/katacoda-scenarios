@@ -1,36 +1,29 @@
-In this session, we will use `minicube` to create local kubernetes cluster.
+In this session, we will use `helm` to install chaos mesh
 
-## Install minicude
+## Install helm
 
-Attention: we have already installed `minicude` for you.
-For more details, please refer to [minicube offcial document](https://minikube.sigs.k8s.io/docs/start/)
+Helm helps you manage Kubernetes applications — Helm Charts helps you define, install, and upgrade even the most complex Kubernetes application.
 
-`curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64`{{copy}}
+Run the following commands to [install helm](https://helm.sh/docs/intro/install/).
 
-`sudo install minikube-linux-amd64 /usr/local/bin/minikube`{{cpoy}}
+`curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -`{{execute}}
+`sudo apt-get install apt-transport-https --yes`{{execute}}
+`echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list`{{execute}}
+`sudo apt-get update`{{execute}}
+`sudo apt-get install helm`{{execute}}
 
-We can use `minikube version`{{execute}} to check that we have already successfully installed `minicude` and its version.
+To check whether Helm is installed or not, execute the following command:
+`helm version`{{execute}}
 
-## Install kubectl
+## Install Chaos Mesh using helm
 
-We need to install `kubectl` so that we can check and interact with the clusters.
-For more details, please refer to [kubernetes documentation](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+for details, you can refer to the [offical documents](https://chaos-mesh.org/docs/production-installation-using-helm/)
 
-1. Download the binary file
-   `curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"`{{execute}}
-
-2. Install kubetcl
-   `sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl`{{execute}}
-
-3. Check the install result
-   `kubectl version --client`{{execute}}
-
-## Start the cluster
-
-To lanuch a cluster, we can run this command `minikube start`{{execute}}
-
-To check the cluster status, we can run `kubectl get services`{{execute}}.
-You will see a similar output as follows:
-
-NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE
-kubernetes ClusterIP 10.96.0.1 <none> 443/TCP 9s
+1. Add Chaos Mesh repository
+   `helm repo add chaos-mesh https://charts.chaos-mesh.org`{{execute}}
+2. View the installable versions of Chaos Mesh
+   `helm search repo chaos-mesh`{{execute}}
+3. Create the namespace to install Chaos Mesh
+   `kubectl create ns chaos-mesh`{{execute}}
+4. Install Chaos Mesh
+   `helm install chaos-mesh chaos-mesh/chaos-mesh -n=chaos-mesh --version 2.1.3`{{execute}}

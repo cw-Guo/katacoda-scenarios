@@ -1,3 +1,7 @@
-## Print the version of Kubernetes
+## Uninstall Chaos Mesh
 
-`kubectl version`{{execute}}
+`helm upgrade chaos-mesh chaos-mesh/chaos-mesh`{{execute}}
+
+`helm uninstall chaos-mesh -n chaos-mesh`{{execute}}
+
+`minikube stop`{{execute}}
