@@ -36,3 +36,4 @@ for details, you can refer to the [offical documents](https://chaos-mesh.org/doc
    `kubectl create ns chaos-mesh`{{execute}}
 4. Install Chaos Mesh
    `helm install chaos-mesh chaos-mesh/chaos-mesh -n=chaos-mesh --version 2.1.3`{{execute}}
+   in which `-n=chaos-mesh` create a special namespace for Chaos Mesh `chaos-mesh`
