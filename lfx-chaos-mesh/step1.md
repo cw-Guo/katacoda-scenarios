@@ -33,7 +33,7 @@ Client Version: version.Info{Major:"1", Minor:"17", GitVersion:"v1.17.3", GitCom
 
 ## Start the cluster
 
-To lanuch a cluster, we can run this command `minikube start`{{execute}}. The shell would told you that `kubectl` is now configured to use `minikube`
+To lanuch a cluster, we can run this command `minikube start`{{execute}}. The shell would told you that `kubectl` is now configured to use `minikube` if it succeeds. It may need serveral minites to finish.
 
 To check the cluster status, we can run `kubectl get services`{{execute}}. You will see a similar output as follows:
 
