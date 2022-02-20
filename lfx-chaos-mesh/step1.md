@@ -6,7 +6,7 @@ Attention: in this katacoda environment, we have already installed `minicude` an
 
 For more details, please refer to [minikube offcial document](https://minikube.sigs.k8s.io/docs/start/)
 
-````sh
+```sh
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 ```{{cpoy}}
@@ -28,10 +28,8 @@ For more details, please refer to [kubernetes documentation](https://kubernetes.
    `kubectl version --client`{{execute}}
    the expected output should be
 
-````
-
+``` sh
 Client Version: version.Info{Major:"1", Minor:"17", GitVersion:"v1.17.3", GitCommit:"06ad960bfd03b39c8310aaf92d1e7c12ce618213", GitTreeState:"clean", BuildDate:"2020-02-11T18:14:22Z", GoVersion:"go1.13.6", Compiler:"gc", Platform:"linux/amd64"}
-
 ```
 
 ## Start the cluster
@@ -40,16 +38,10 @@ To lanuch a cluster, we can run this command `minikube start`{{execute}}
 
 The shell would told you that `kubectl` is now configured to use `minikube`
 
-
-
 To check the cluster status, we can run `kubectl get services`{{execute}}.
 You will see a similar output as follows:
 
-```
-
+```sh
 NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE
 kubernetes ClusterIP xxx.xx.x.x <none> 443/TCP 9s
-
-```
-
 ```
