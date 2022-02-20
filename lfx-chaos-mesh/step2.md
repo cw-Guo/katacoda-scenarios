@@ -6,14 +6,26 @@ Helm helps you manage Kubernetes applications — Helm Charts helps you define, 
 
 Run the following commands to [install helm](https://helm.sh/docs/intro/install/).
 
-`curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -`{{execute}}
-`sudo apt-get install apt-transport-https --yes`{{execute}}
-`echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list`{{execute}}
-`sudo apt-get update`{{execute}}
-`sudo apt-get install helm`{{execute}}
+```sh
+curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
+
+sudo apt-get install apt-transport-https --yes
+
+echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+
+sudo apt-get update
+
+sudo apt-get install helm
+```{{execute}}
+
 
 To check whether Helm is installed or not, execute the following command:
 `helm version`{{execute}}
+
+the expected output should be:
+```
+Client: &version.Version{SemVer:"v2.10.0", GitCommit:"9ad53aac42165a5fadc6c87be0dea6b115f93090", GitTreeState:"clean"}
+```
 
 ## Install Chaos Mesh using helm
 
