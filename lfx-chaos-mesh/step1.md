@@ -12,15 +12,6 @@ For more details, please refer to [minikube offcial document](https://minikube.s
 
 We can use `minikube version`{{execute}} to check that we have already successfully installed `minicude` and its version.
 
-Since we are going to use multiple nodes cluster, we are going to upgrade the `minikube` version to latest.
-
-run 
-`curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64`{{execute}}
-
-`sudo install minikube-linux-amd64 /usr/local/bin/minikube`{{execute}}
-
-and we can check the version again `minikube version`{{execute}}, it would be the latest release.
-
 ## Install kubectl
 
 We need to install `kubectl` so that we can check and interact with the clusters.
@@ -44,14 +35,6 @@ Client Version: version.Info{Major:"1", Minor:"17", GitVersion:"v1.17.3", GitCom
 
 To lanuch a cluster, we can run this command `minikube start`{{execute}}. The shell would told you that `kubectl` is now configured to use `minikube` if it succeeds. It may need serveral minites to finish.
 
-*Attension*: If you want to create multiple nodes cluster, we need to upgrade docker version.
-
-The upgrade can be done via `sudo apt-get update`{{execute}}
-
-`sudo apt-get install docker-ce docker-ce-cli containerd.io`{{execute}}
-
-After that, we can run `minikube start -n 2`{{execute}}.
-
 To check the cluster status, we can run `kubectl get services`{{execute}}. You will see a similar output as follows:
 
 ```sh
@@ -60,3 +43,16 @@ kubernetes ClusterIP xxx.xx.x.x <none> 443/TCP 9s
 ```
 
 We can run `kubectl get nodes`{{execute}} to check node status.
+
+## Troubleshot
+
+*Attension*: If you want to create multiple nodes cluster, you need to upgrade docker version. And you should run`minikube start -n 2`{{copy}}
+
+We *cannot* run this successfully in this environment because the `docker` driver is used with root privileges, which is not accepted by `minikube`. While you can try it in you local machine or other platform.
+
+You can run `kubectl get nodes`{{copy}} and the expeted output should be like
+```
+NAME           STATUS   ROLES                  AGE    VERSION
+minikube       Ready    control-plane,master   102s   v1.23.1
+minikube-m02   Ready    <none>                 68s    v1.23.1
+```
