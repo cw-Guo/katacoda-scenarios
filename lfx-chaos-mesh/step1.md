@@ -46,7 +46,7 @@ We can run `kubectl get nodes`{{execute}} to check node status.
 
 ## Troubleshot
 
-*Attension*: If you want to create multiple nodes cluster, you need to upgrade docker version. And you should run`minikube start -n 2`{{copy}}
+*Attention*: If you want to create multiple nodes cluster, you need to upgrade docker version. And you should run`minikube start -n 2`{{copy}}
 
 We *cannot* run this successfully in this environment because the `docker` driver is used with root privileges, which is not accepted by `minikube`. While you can try it in you local machine or other platform.
 
