@@ -2,7 +2,7 @@
   "title": "Get started on Chaos Mesh",
   "description": "This is a katacoda scenario for lfx mentorship application, focuing on chaos mesh",
   "difficulty": "Beginner",
-  "time": "20",
+  "time": "20 min",
   "details": {
     "steps": [
       {
